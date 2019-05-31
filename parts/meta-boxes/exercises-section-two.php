@@ -24,6 +24,7 @@ piklist('field', array(
   ,'help' => 'Enter the FULL YouTube url'
   ,'attributes' => array(
     'class' => 'large-text'
+    ,'placeholder' => 'https://'
   )
 ));
 
@@ -33,6 +34,6 @@ piklist('field', array(
 
 <?php if ($youtube_url) : ?>
 
-  <iframe width="560" height="315" style="margin-left: 240px;" src="https://www.youtube.com/embed/<?php echo exercise_parse_youtube_id($youtube_url);?>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  <iframe width="525" height="315" style="margin-left: 240px;" src="https://www.youtube.com/embed/<?php echo exercise_parse_youtube_id($youtube_url);?>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 <?php endif; ?>
