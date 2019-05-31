@@ -17,20 +17,20 @@ Locked: true
       'class' => 'text'
     )
     ,'choices' => array(
-        'approved' => 'Approved'
-        ,'pending' => 'Pending Review'
+      'approved' => 'Approved'
+      ,'pending' => 'Pending Review'
     )
   ));
 ?>
 
 <div id="major-publishing-actions" class="piklist-major-publishing-actions">
 
-	<div id="publishing-action">
+  <div id="publishing-action">
 
-		<?php echo submit_button(esc_html__('Save'), 'primary', 'submit', false); ?>
+    <?php echo submit_button(esc_html__('Save'), 'primary', 'submit', false); ?>
 
-	</div>
+  </div>
 
-	<div class="clear"></div>
+  <div class="clear"></div>
 
 </div>
