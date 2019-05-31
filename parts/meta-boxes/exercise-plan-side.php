@@ -26,4 +26,4 @@ piklist('field', array(
       ,'display_name'
     )
   )
-    ));
+));

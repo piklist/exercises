@@ -42,10 +42,10 @@ piklist('field', array(
       )
     )
     ,array(
-        'type' => 'number'
-        ,'field' => 'weight'
-        ,'label' => 'Weight'
-        ,'columns' => 2
-      )
+      'type' => 'number'
+      ,'field' => 'weight'
+      ,'label' => 'Weight'
+      ,'columns' => 2
+    )
   )
 ));

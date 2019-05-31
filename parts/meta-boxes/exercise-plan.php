@@ -6,7 +6,6 @@ Order: 20
 Meta box: false
 */
 
-
 piklist('field', array(
   'type' => 'select'
   ,'field' => 'excercise_list'
