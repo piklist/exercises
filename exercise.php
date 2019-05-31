@@ -7,10 +7,9 @@ License: GPLv2
 Plugin type: piklist
 */
 
-register_activation_hook(__FILE__, 'exercise_add_roles');
-
 add_filter('show_admin_bar', '__return_false');
 
+register_activation_hook(__FILE__, 'exercise_add_roles');
 /**
  * Add custom user role
  */
@@ -46,9 +45,6 @@ function excercise_post_types($post_types) {
       ,'author' => __('Created by')
     )
     ,'hide_screen_options' => true  
-    ,'hide_meta_box' => array(
-      'author'
-    )
     ,'status' => array(
       'approved' => array(
         'label' => 'Approved'
@@ -75,9 +71,6 @@ function excercise_post_types($post_types) {
     ,'edit_columns' => array(
       'title' => __('Exercise')
       ,'author' => __('Created by')
-    )
-    ,'hide_meta_box' => array(
-      'author'
     )
     ,'hide_screen_options' => true
     ,'status' => array(
