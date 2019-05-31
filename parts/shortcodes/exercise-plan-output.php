@@ -8,7 +8,7 @@ $current_user = wp_get_current_user();
 $plan_assigned_to = get_post_meta($post->ID, 'assigned_to', true);
 $plan_assigned_to_info = get_userdata($plan_assigned_to);
 
-if ($current_user->ID != $plan_assigned_to_info->ID):
+if ($current_user->ID == $plan_assigned_to_info->ID): // temp == for presentation
 ?>
   <h2><?php _e('Not for you'); ?></h2>
 <?php 
@@ -30,7 +30,7 @@ else:
   // Pull the Post ID for the current exercise
   $exercise_id = $exercise_list_ids[$exercise_plan_step-1];
 ?>
-  <h2><?php _e('Plan for'); ?>: <?php echo $plan_assigned_to_info->data->display_name; ?></h2>
+  <h3><?php _e('Plan for'); ?>: <?php echo $plan_assigned_to_info->data->display_name; ?></h3>
   
   <ul id="exercise-grid">
     <?php
@@ -106,3 +106,24 @@ else:
     }
   </style>
 <?php endif; ?>
+
+
+
+
+
+
+<style>
+/* temporary for Genesis theme */
+.site-inner {
+  padding-top:0;
+}
+.entry-header {
+  margin-bottom: 0;
+}
+.entry-content h2, .entry-content h3, .entry-content h4 {
+  margin-top: 20px;
+}
+.full-width-content.single .content, .full-width-content.page .content {
+  margin-top: 20px;
+}
+</style>

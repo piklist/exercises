@@ -19,8 +19,8 @@ piklist('field', array(
 piklist('field', array(
   'type' => 'text'
   ,'field' => 'video'
-  ,'label' => 'Video'
-  ,'description' => 'YouTube url'
+  ,'label' => 'YouTube Video'
+  ,'description' => 'Full YouTube URL'
   ,'help' => 'Enter the FULL YouTube url'
   ,'attributes' => array(
     'class' => 'large-text'

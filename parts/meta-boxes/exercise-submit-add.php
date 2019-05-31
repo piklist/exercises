@@ -4,7 +4,7 @@ Title: Status
 Post Type: exercise, exercise_plan
 Context: side
 Priority: high
-Order: 2222222
+Order: 1
 Locked: true
 */
 

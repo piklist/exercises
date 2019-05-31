@@ -10,6 +10,7 @@ piklist('field', array(
   'type' => 'select'
   ,'field' => 'excercise_list'
   ,'label' => 'Choose exercises'
+  ,'description' => 'Only <a href="'.admin_url().'/edit.php?post_status=approved&post_type=exercise" target="_blank">Approved</a> exercies can be selected.'
   ,'add_more' => true
   ,'choices' => piklist(
     get_posts(
