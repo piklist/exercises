@@ -6,7 +6,7 @@ Shortcode: exercise_plan_output
 $current_user = wp_get_current_user();
 
 $plan_assigned_to = get_post_meta($post->ID, 'assigned_to', true);
-$plan_assigned_to_info = get_userdata(52); //get_userdata($plan_assigned_to);
+$plan_assigned_to_info = get_userdata($plan_assigned_to);
 
 if ($current_user->ID != $plan_assigned_to_info->ID):
 ?>

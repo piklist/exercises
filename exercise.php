@@ -9,10 +9,6 @@ Plugin type: piklist
 
 register_activation_hook(__FILE__, 'exercise_add_roles');
 
-add_action('init', 'exercise_remove_entry_meta', 12);
-
-add_filter('piklist_post_types', 'excercise_post_types');
-add_filter('the_content', 'excerise_plan_output', 20);
 add_filter('show_admin_bar', '__return_false');
 
 /**
@@ -31,6 +27,7 @@ function exercise_add_roles() {
 /**
  * Register Post Types
  */
+add_filter('piklist_post_types', 'excercise_post_types');
 function excercise_post_types($post_types) {
   $post_types['exercise_plan'] = array(
     'labels' => piklist('post_type_labels', 'Exercise Plan')
@@ -103,6 +100,7 @@ function excercise_post_types($post_types) {
 /**
  * Automatically show exercise_plan_output shortcode on exercise_plan
  */
+add_filter('the_content', 'excerise_plan_output', 20);
 function excerise_plan_output($content) {
   if (is_singular('exercise_plan')) {
     $content .= do_shortcode('[exercise_plan_output]');
@@ -125,8 +123,28 @@ function exercise_parse_youtube_id($youtube_url) {
 }
 
 /**
+ * Validation Rules
+ */
+add_filter('piklist_validation_rules', 'exercise_validation_rules', 12);
+function exercise_validation_rules($validation_rules)
+{
+  $validation_rules['youtube_url'] = array(
+    'rule' => "~
+                ^(?:https?://)?                           # Optional protocol
+                 (?:www[.])?                              # Optional sub-domain
+                 (?:youtube[.]com/watch[?]v=|youtu[.]be/) # Mandatory domain name (w/ query string in .com)
+                 ([^&]{11})                               # Video id of 11 characters as capture group 1
+               ~x"
+    ,'message' => __('is not a valid youtube url.')
+  ); 
+  
+  return $validation_rules;
+}  
+
+/**
  * Remove entry meta for genesis
  */
+add_action('init', 'exercise_remove_entry_meta', 12);
 function exercise_remove_entry_meta() {
   remove_post_type_support('exercise_plan', 'genesis-entry-meta-before-content');
   

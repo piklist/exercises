@@ -26,6 +26,11 @@ piklist('field', array(
     'class' => 'large-text'
     ,'placeholder' => 'https://'
   )
+  ,'validate' => array(
+    array(
+      'type' => 'youtube_url'
+    )
+  )
 ));
 
 ?>
